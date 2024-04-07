@@ -33,13 +33,19 @@ public class Main {
                 } else if (opcao == 2){
                     System.out.println("Quanto você quer Transferir? ");
                     transferir = leitor.nextDouble();
+                if (transferir > salDoInicial){
+                    System.out.println("Não há Saldo Suficiente Para essa Transferencia: ");
+                }   else {
                     salDoInicial = salDoInicial - transferir;
                     System.out.println("Saldo Atualizado: " + salDoInicial);
+                }
                 } else if (opcao == 3 ){
                     System.out.println("Quando você esta Recebendo? ");
                     receber = leitor.nextDouble();
                     salDoInicial = salDoInicial + receber;
                     System.out.println("Saldo Atualizado: " + salDoInicial);
+                } else if (opcao != 4) {
+                    System.out.println("Opção Inválida");
                 }
 
             }
